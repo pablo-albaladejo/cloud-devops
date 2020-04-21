@@ -1,6 +1,14 @@
 pipeline {
   agent any
    stages {
+    stage('Checking out git repo') {
+        steps {
+            script {
+                echo 'Checkout Git repository'
+                checkout scm
+            }
+        }
+    }
     stage('Prepare') {
       steps {
         dir('my-app') {
