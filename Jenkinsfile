@@ -1,9 +1,10 @@
 pipeline {
   agent any
    stages {
-    stage('Lint HTML') {
+    stage('Test') {
       steps {
-          sh 'tidy -q -e --show-warnings no ./linux_tweet_app/*.html'
+          sh 'cd my_app',
+          sh 'yarn test'
       }
     }
    }
