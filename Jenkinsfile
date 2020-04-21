@@ -21,7 +21,8 @@ pipeline {
     }
     stage('Docker') {
       steps {
-          sh './run_docker'
+          sh 'pwd'
+          sh './run_docker.sh'
       }
     }
    }
