@@ -30,6 +30,7 @@ pipeline {
       steps{
         withAWS(credentials: 'aws-kubernetes', region: '$KUBERNETES_AWS_REGION'){
           sh 'aws --version'
+          sh 'which aws'
 		  sh 'aws eks list-clusters'
 		}
 	  }
