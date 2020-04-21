@@ -22,6 +22,7 @@ pipeline {
     stage('Docker') {
       steps {
           sh 'docker build . --tag=cloud-devops'
+          sh 'docker image push pabloalbaladejo/cloud-devops'
       }
     }
    }
