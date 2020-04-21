@@ -21,7 +21,7 @@ pipeline {
     }
     stage('Docker') {
       steps {
-          sh 'run_docker'
+          sh './run_docker'
       }
     }
    }
