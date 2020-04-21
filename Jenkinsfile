@@ -22,5 +22,12 @@ pipeline {
           }
       }
     }
+    stage('Build') {
+      steps {
+          dir('my-app') {
+            sh 'yarn build'
+          }
+      }
+    }
    }
 }
