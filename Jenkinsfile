@@ -26,5 +26,12 @@ pipeline {
           sh 'docker image push $DOCKER_TAG'
       }
     }
+    stage('Kubernetes') {
+      steps{
+        withAWS(credentials: 'aws-kubernetes', region: '$KUBERNETES_AWS_REGION'){
+		  sh 'aws eks list-clusters'
+		}
+	  }
+    }
    }
 }
