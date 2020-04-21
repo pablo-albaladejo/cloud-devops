@@ -1,7 +1,7 @@
 pipeline {
   agent any
    stages {
-    stage('Checking out git repo') {
+    stage('checkout scm') {
         steps {
             script {
                 echo 'Checkout Git repository'
@@ -9,32 +9,18 @@ pipeline {
             }
         }
     }
-    stage('Prepare') {
+    stage('React') {
       steps {
         dir('my-app') {
+            sh 'echo "Install"'
             sh 'yarn install'
-        }
-      }
-    }
-    stage('Lint') {
-      steps {
-        dir('my-app') {
+            sh 'echo "Lint"'
             sh 'yarn lint'
-        }
-      }
-    }
-    stage('Test') {
-      steps {
-          dir('my-app') {
+            sh 'echo "Test"'
             sh 'yarn test'
-          }
-      }
-    }
-    stage('Build') {
-      steps {
-          dir('my-app') {
+            sh 'echo "Build"'
             sh 'yarn build'
-          }
+        }
       }
     }
    }
