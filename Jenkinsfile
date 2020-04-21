@@ -3,7 +3,7 @@ pipeline {
    stages {
     stage('Test') {
       steps {
-          sh 'cd my_app'
+          sh 'cd my-app'
           sh 'yarn test'
       }
     }
