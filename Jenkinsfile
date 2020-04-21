@@ -22,7 +22,7 @@ pipeline {
     stage('Docker') {
       steps {
           sh 'docker build . --tag=pabloalbaladejo/cloud-devops'
-          sh 'docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}'
+          sh 'docker login -u $DOCKER_USER -p $DOCKER_PASSWORD'
           sh 'docker image push pabloalbaladejo/cloud-devops'
       }
     }
