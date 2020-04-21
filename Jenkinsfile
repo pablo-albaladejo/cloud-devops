@@ -8,6 +8,13 @@ pipeline {
         }
       }
     }
+    stage('Lint') {
+      steps {
+        dir('my-app') {
+            sh 'yarn lint'
+        }
+      }
+    }
     stage('Test') {
       steps {
           dir('my-app') {
