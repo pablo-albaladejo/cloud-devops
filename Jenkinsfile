@@ -29,9 +29,11 @@ pipeline {
     stage('Kubernetes') {
       steps{
         withAWS(credentials: 'aws-kubernetes', region: 'us-east-2'){
-		  sh 'aws eks list-clusters'
-		}
-	  }
+		      sh 'aws eks --region us-east-2 update-kubeconfig --name cloud-devops-cluster'
+          sh 'aws eks list-clusters'
+          sh 'kubectl get svc'
+		    }
+	    }
     }
    }
 }
