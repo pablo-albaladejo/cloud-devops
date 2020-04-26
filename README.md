@@ -38,5 +38,6 @@
 
    8.2) Test config
    kubectl get svc
+   #https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux
 
 9. 
