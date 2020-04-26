@@ -31,6 +31,7 @@ pipeline {
         withAWS(credentials: 'aws-kubernetes', region: 'us-east-2'){
 		      sh 'aws eks --region us-east-2 update-kubeconfig --name cloud-devops-cluster'
           sh 'kubectl apply -f ./deployment/eks-deployment.yml'
+          sh 'kubectl get svc'
 		    }
 	    }
     }
