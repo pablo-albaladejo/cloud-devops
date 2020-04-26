@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Amazon EKS Node Group'
+Parameters:
+  EnvironmentName:
+    Description: An environment name that will be prefixed to resource names
+    Type: String
+    Default: cloud-devops
+
+Resources:
+  EKSNodegroup:
+    Type: 'AWS::EKS::Nodegroup'
+    Properties:
+      ClusterName: !Sub "${EnvironmentName}-cluster"
+      NodeRole:
+        Fn::ImportValue: !Sub "${EnvironmentName}-NODEGROUP-ROLE"
+      ScalingConfig:
+        MinSize: 3
+        DesiredSize: 5
+        MaxSize: 7
+      Subnets:
+        - subnet-6782e71e
+        - subnet-e7e761ac
