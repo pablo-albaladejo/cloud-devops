@@ -34,6 +34,7 @@ pipeline {
           sh "kubectl get pods"
           sh "kubectl get nodes"
           sh 'kubectl get svc'
+          sh 'kubectl rollout status deployment.v1.apps/cloud-devops-deploy'
 		    }
 	    }
     }
