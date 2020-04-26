@@ -31,8 +31,9 @@ pipeline {
         withAWS(credentials: 'aws-kubernetes', region: 'us-east-2'){
 		      sh 'aws eks --region us-east-2 update-kubeconfig --name cloud-devops-cluster'
           sh 'kubectl apply -f ./deployment/eks-deployment.yml'
-          sh "kubectl get pods"
-          sh "kubectl get nodes"
+          sh 'kubectl set image deployment/cloud-devops-deploy cloud-devops-deploy=pabloalbaladejo/cloud-devops:latest --record'
+          sh 'kubectl get pods'
+          sh 'kubectl get nodes'
           sh 'kubectl get svc'
           sh 'kubectl rollout status deployment.v1.apps/cloud-devops-deploy'
 		    }

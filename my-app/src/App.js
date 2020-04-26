@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Cloud DevOps by Pablo Albaladejo
+          Cloud DevOps by Pablo Albaladejo Mestre
         </p>
         <a
           className="App-link"
@@ -17,7 +17,6 @@ function App() {
           rel="noopener noreferrer"
         >
           Git Repository
-          {/* TEST */}
         </a>
       </header>
     </div>

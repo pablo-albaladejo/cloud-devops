@@ -33,7 +33,3 @@ spec:
           protocol: TCP
   strategy:
     type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
-  minReadySeconds: 10
